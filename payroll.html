@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Comaptible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Calculator</title>
+ <link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<div class="name">
+<label for="name">Name:</label>
+<input type="text" id="name" placeholder="Enter your name here"  maxlength="12">
+<input type="button" id="btn1" value="Submit">
+<p class="output" id="output1"</p>
+
+
+</div>
+
+<div>
+<script>
+
+function fun1() {const txt1 = document.getElementById('name');
+const btn1 = document.getElementById('btn1');
+const out1= document.getElementById('output1');
+out1.innerHTML = txt1.value
+const hourlyRateInput = document.getElementById('hourlyRate')
+const hoursPerDayInput = document.getElementById('hoursPerDay')
+const daysPerWeekInput = document.getElementById('daysPerWeek')
+const overtimePerWeek = document.getElementById('overtimePerWeek')
+}
+
+btn1.addEventListener('click',fun1);
+
+</script>
+</div> 
+
+ <div class="container">
+	<h1>Salary Calculator</h1>
+	<div class="calculator-inputs">
+		<div class="inputs">
+			<label for="hourlyRate"> Hourly Rate: </label>
+				<input type="number" id="hourlyRate" class="hourly-rate" min="0" value="1" onchange="calculateSalary()">
+		</div>
+
+	<div class="inputs">
+			<label for="hoursPerDay"> Hours Per Day: </label>
+				<input type="range" id="hoursPerDay" min="1" max="24" value="1" onchange="calculateSalary()">
+				<span id="hours-num">1</span>
+		</div>
+		
+		
+		
+		<div class="inputs">
+			<label for="daysPerWeek"> Days Per Week: </label>
+				<input type="range" id="daysPerWeek" min="1" max="7" value="1" onchange="calculateSalary()">
+				<span id="days-num">1</span>
+		</div>
+		
+		
+		
+		<div class="inputs">
+			<label for="overtimePerWeek"> Overtime Per Week: </label>
+				<input type="range" id="overtimePerWeek" min="0" max="30" value="1" onchange="calculateSalary()">
+					<span id="overtime-num">1</span>
+		</div>
+			
+	</div>	
+			
+	
+	<div class="calculations">
+	<h2> Calculated Salary</h2>
+	<p> Hourly Amount: <span id="hourlyAmount"></span></p>
+	<p> Daily Amount: <span id="dailyAmount"></span></p>
+	<p> Weekly Amount: <span id="weeklyAmount"></span></p>
+	<p> Monthly Amount: <span id="monthlyAmount"></span></p>
+	<p> Annual Amount: <span id="annualAmount"></span></p>
+	<p> Overtime Amount: <span id="overtimeAmount"></span></p>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
+
